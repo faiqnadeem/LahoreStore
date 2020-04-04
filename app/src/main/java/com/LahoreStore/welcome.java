@@ -1,11 +1,11 @@
-package com.example.lahorestore;
+package com.LahoreStore;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
+
+import com.LahoreStore.Activites.R;
 
 public class welcome extends AppCompatActivity {
 
@@ -26,7 +26,7 @@ public class welcome extends AppCompatActivity {
             public void run() {
                 try {
                     sleep(1000);
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
                 } catch (InterruptedException e) {
                     e.printStackTrace();

@@ -1,4 +1,4 @@
-package com.example.lahorestore;
+package com.LahoreStore.Activites;
 
 import android.content.Context;
 

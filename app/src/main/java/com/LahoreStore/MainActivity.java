@@ -1,7 +1,6 @@
-package com.example.lahorestore;
+package com.LahoreStore;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -11,10 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.webkit.WebChromeClient;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -22,12 +18,14 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
+import com.LahoreStore.Activites.R;
+
 public class MainActivity extends AppCompatActivity {
 
     WebView webview;
     private String webUrl = "https://lahorestore.pk";
     ProgressBar progressBarWeb;
-    ProgressDialog progressDialog;
+
     RelativeLayout relativeLayout;
     Button button404;
 
@@ -36,15 +34,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-       // Window window = getWindow();
-       // window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_main);
 
         webview = (WebView) findViewById(R.id.web1);
         progressBarWeb = (ProgressBar) findViewById(R.id.ProgressBar);
-        //progressDialog = new ProgressDialog(this);
-        //progressDialog.setMessage("Please Wait While Loading...");
+
 
         button404 = (Button) findViewById(R.id.retry404);
         relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
@@ -61,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        //webview.clearCache(true);
+
         webview.getSettings().setJavaScriptEnabled(true);
         webview.getSettings().setDomStorageEnabled(true);
 
@@ -83,13 +78,12 @@ public class MainActivity extends AppCompatActivity {
                 progressBarWeb.setVisibility(View.VISIBLE);
                 progressBarWeb.setProgress(newProgress);
                 setTitle("Lahore Store is Under Development");
-                //progressDialog.show();
+
 
                 if(newProgress == 100){
 
                     progressBarWeb.setVisibility(View.GONE);
-                    //setTitle(view.getTitle());
-                    //progressDialog.dismiss();
+
                 }
 
                 super.onProgressChanged(view, newProgress);
