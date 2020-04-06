@@ -26,8 +26,11 @@ public class MainActivity extends AppCompatActivity {
     private String webUrl = "https://lahorestore.pk";
     ProgressBar progressBarWeb;
 
+    ProgressDialog progressDialog;
+
     RelativeLayout relativeLayout;
     Button button404;
+
 
 
     @Override
@@ -37,8 +40,13 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().hide();
+
         webview = (WebView) findViewById(R.id.web1);
         progressBarWeb = (ProgressBar) findViewById(R.id.ProgressBar);
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Stay Home Stay Safe COVID-19");
+
 
 
         button404 = (Button) findViewById(R.id.retry404);
@@ -60,14 +68,14 @@ public class MainActivity extends AppCompatActivity {
         webview.getSettings().setJavaScriptEnabled(true);
         webview.getSettings().setDomStorageEnabled(true);
 
-        webview.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        //webview.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         webview.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         webview.getSettings().setAppCacheEnabled(true);
         webview.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         webview.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
-        webview.getSettings().setUseWideViewPort(true);
-        webview.getSettings().setSavePassword(true);
-        webview.getSettings().setSaveFormData(true);
+        //webview.getSettings().setUseWideViewPort(true);
+        //webview.getSettings().setSavePassword(true);
+        //webview.getSettings().setSaveFormData(true);
         webview.getSettings().setEnableSmoothTransition(true);
 
 
@@ -77,12 +85,13 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(WebView view, int newProgress) {
                 progressBarWeb.setVisibility(View.VISIBLE);
                 progressBarWeb.setProgress(newProgress);
-                setTitle("Lahore Store is Under Development");
+                progressDialog.show();
 
 
                 if(newProgress == 100){
 
                     progressBarWeb.setVisibility(View.GONE);
+                    progressDialog.hide();
 
                 }
 
