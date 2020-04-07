@@ -6,23 +6,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.LahoreStore.welcome">
-    
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:src="@drawable/logo"
-        android:padding="30dp"
-        android:scaleType="fitCenter"
-        android:layout_marginTop="60dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="250dp"
+        android:layout_marginTop="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardElevation="20dp"
+        app:cardCornerRadius="200dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/logo"
+                android:padding="30dp"
+                android:scaleType="fitCenter">
+            </ImageView>
+
+    </androidx.cardview.widget.CardView>
+
     <ProgressBar
-        android:layout_width="220dp"
-        android:layout_height="10dp"
-        android:layout_gravity="center_horizontal"
         style="?android:attr/progressBarStyleHorizontal"
-        android:max="100"
+        android:layout_width="250dp"
+        android:layout_height="21dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
         android:indeterminate="true"
+        android:max="100"
         android:progress="0"
-        android:layout_marginTop="130dp" />
+        android:theme="@style/ContrastTheme" />
 
 
 </LinearLayout>

@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         webview = (WebView) findViewById(R.id.web1);
+
         progressBarWeb = (ProgressBar) findViewById(R.id.ProgressBar);
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Stay Home Stay Safe COVID-19");
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         webview.getSettings().setJavaScriptEnabled(true);
         webview.getSettings().setDomStorageEnabled(true);
+
 
         //webview.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         webview.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
@@ -119,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("ARE YOU SURE YOU WANT TO EXIT ?")
-                    .setNegativeButton("NO",null)
+                    .setNegativeButton("SHOP MORE",null)
                     .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
